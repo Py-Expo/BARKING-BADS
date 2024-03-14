@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essay Analysis Results</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body class="batman-theme">
+    <div class="container">
+        <header>
+            <h1>Essay Analysis Results</h1>
+        </header>
+        
+        <div class="box">
+            <section class="essay-section">
+                <h2>Your Essay:</h2>
+                <p>{{ essay }}</p>
+            </section>
+        </div>
+
+        <div class="box">
+            <section class="suggestions-section">
+                <h2>Grammar Suggestions:</h2>
+                <ul>
+                {% for suggestion in grammar_suggestions %}
+                    <li>{{ suggestion }}</li>
+                {% endfor %}
+                </ul>
+            </section>
+        </div>
+
+        <div class="box">
+            <section class="content-section">
+                <h2>Unnecessary Content Identified:</h2>
+                <ul>
+                {% for content in unnecessary_content %}
+                    <li>{{ content }}</li>
+                {% endfor %}
+                </ul>
+            </section>
+        </div>
+
+        <div class="box">
+            <section class="score-section">
+                <h2>Writing Quality Score:</h2>
+                <p>{{ quality_score }}</p>
+
+                <h2>Grammar Score:</h2>
+                <p>{{ grammar_score }}</p>
+
+                <h2>Unnecessary Content Score:</h2>
+                <p>{{ unnecessary_content_score }}</p>
+
+                <h2>Final Score:</h2>
+                <p>{{ final_score }}</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
